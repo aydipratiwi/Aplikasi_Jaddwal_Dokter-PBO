@@ -1,6 +1,6 @@
 A. Kebutuhan Fungsional
 Kebutuhan fungsional pada aplikasi ini meliputi
-1.	Sistem dapat mengelola data dokter, mencakup nama dokter, jenis kelamin, spesialisasi, dan status kehadiran (Hadir, Izin, Sakit, Tugas Luar)."
+1.	Sistem dapat mengelola data dokter, mencakup nama dokter, jenis kelamin, spesialisasi, dan status kehadiran (Hadir, Izin, Sakit, Tugas Luar).
 2.	Sistem dapat mengelola data Kepala Poli berdasarkan bidang spesialisasi masing-masing. 
 3.	Sistem dapat mengelola data alokasi ruangan dan kamar praktik yang tersedia. 
 4.	Sistem dapat mengelola data unit Farmasi yang berkaitan dengan pelayanan kesehatan. 
