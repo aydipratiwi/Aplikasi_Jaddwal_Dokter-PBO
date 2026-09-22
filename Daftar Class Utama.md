@@ -2,9 +2,9 @@ Daftar Class Utama Aplikasi Pengelolaan Jadwal Dokter
 Berikut adalah daftar class utama beserta atribut, method, dan penerapannya dalam perancangan aplikasi:
 ## 1. PersonilMedis (Abstract Class)
 - Atributnya
-  - 'idPersonil' : String
-  - 'nama' : String
-  - 'jenisKelamin' : String
+  - `idPersonil` : String
+  - `nama` : String
+  - `jenisKelamin` : String
 - Methodnya:
   - `getIdPersonil()` : String
   - `getNama()` : String
