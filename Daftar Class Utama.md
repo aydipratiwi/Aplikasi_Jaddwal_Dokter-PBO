@@ -55,7 +55,7 @@ Berikut adalah daftar class utama beserta atribut, method, dan penerapannya dala
   - `getDaftarKamar()` : List<KamarPraktik>
 
 ## 7. JadwalPraktik
--Atributnya:
+- Atributnya:
   - `idJadwal` : String
   - `hari` : String
   - `jamPraktik` : String
