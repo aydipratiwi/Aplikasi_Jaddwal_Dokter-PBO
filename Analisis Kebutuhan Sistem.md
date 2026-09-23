@@ -19,6 +19,8 @@
 2. Kepala Poli : Melihat dan memantau kepastian rutinitas jadwal praktik dokter spesialis di bawah unit tanggung jawabnya.
 3. Pasien : Melihat penayangan informasi jadwal praktik dokter mingguan, mencakup nama dokter, jenis kelamin, spesialisasi, hari, jam, dan kamar praktik.
 4. Unit Farmasi : Melihat informasi jadwal praktik dokter mingguan yang terintegrasi dengan pelayanan farmasi.
+5. menajemen : menyusun jadwal dan memeriksa validasi bentrok ruangan, serta menatau dan mengawas oprasional rsud secara keseluruhan.
+6. dokter : melihat jadwal mingguan praktik , memberi resep obat dari pasien ke farmasi.
 
 ## D. Hak Akses Aktor
 Admin  
