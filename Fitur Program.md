@@ -4,137 +4,75 @@
 
 | Kode | Fitur | Aktor | Deskripsi | Class Terkait |
 |---|---|---|---|---|
-| F-01 | Pilih Peran / Login | Semua | Menentukan hak akses pengguna: Admin, Kepala Poli, Pasien, Unit Farmasi | — |
-| F-02 | Dashboard Admin | Admin | Menampilkan ringkasan jumlah dokter, jadwal, kamar terisi, dan kamar tersedia | Semua |
-| F-03 | CRUD Data Dokter | Admin | Tambah, lihat, ubah, hapus data dokter; atur status kehadiran | `PersonilMedis`, `DokterSpesialis` |
-| F-04 | CRUD Data Kepala Poli | Admin | Kelola data Kepala Poli berdasarkan bidang spesialisasi | `KepalaPoli` |
-| F-05 | CRUD Data Unit Farmasi | Admin | Kelola data unit Farmasi yang terkait pelayanan | `UnitFarmasi` |
-| F-06 | CRUD Poliklinik & Kamar | Admin | Kelola Poliklinik Gedung A/B dan Kamar 1–6 | `Poliklinik`, `KamarPraktik` |
-| F-07 | Buat Jadwal Praktik | Admin | Input jadwal praktik dokter mingguan | `JadwalPraktik` |
-| F-08 | Validasi Bentrok Jadwal | Admin | Cek bentrok kamar dan waktu sebelum jadwal disimpan | `JadwalPraktik.cekBentrok()` |
-| F-09 | Update Status Kamar Otomatis | Sistem | Status kamar mengikuti status kehadiran dokter | `JadwalPraktik.updateOtomatisStatusKamar()` |
-| F-10 | Jadwal Praktik Dokter Mingguan | Admin, Kepala Poli, Pasien, Farmasi | Menampilkan jadwal mingguan lengkap | `JadwalPraktik.cetakJadwalMingguan()` |
-| F-11 | Filter Jadwal | Semua | Filter berdasarkan hari, spesialisasi, gedung, atau dokter | `JadwalPraktik` |
-| F-12 | Hak Akses Pengguna | Sistem | Admin dapat CRUD; Kepala Poli, Pasien, Farmasi hanya melihat | — |
-| F-13 | Cetak / Export Jadwal | Admin | Cetak atau simpan jadwal mingguan | `JadwalPraktik` |
+| F-01 | Pilih Peran / Login | Semua aktor | Menentukan peran pengguna dan hak aksesnya. | Belum ditentukan |
+| F-02 | Dashboard Admin | Admin | Menampilkan ringkasan informasi pengelolaan dokter, jadwal, dan kamar praktik. | Menyesuaikan implementasi |
+| F-03 | Pengelolaan Data Dokter | Admin | Mengelola identitas, spesialisasi, dan status kehadiran dokter. | `PersonilMedis`, `DokterSpesialis` |
+| F-04 | Pengelolaan Unit Farmasi | Admin | Mengelola data unit Farmasi yang berkaitan dengan pelayanan. | `UnitFarmasi` |
+| F-05 | Pengelolaan Poliklinik dan Kamar | Admin | Mengelola data poliklinik dan enam kamar praktik. | `Poliklinik`, `KamarPraktik` |
+| F-06 | Pembuatan Jadwal Praktik | Admin, Manajemen | Menyusun jadwal berdasarkan dokter, hari, jam, kamar, dan unit Farmasi. | `JadwalPraktik` |
+| F-07 | Validasi Bentrok Jadwal | Admin, Manajemen | Memeriksa bentrok penggunaan kamar sebelum jadwal disimpan. | `JadwalPraktik` |
+| F-08 | Pembaruan Status Kamar | Sistem | Menyesuaikan status kamar berdasarkan status kehadiran dokter sesuai aturan sistem. | `DokterSpesialis`, `KamarPraktik`, `JadwalPraktik` |
+| F-09 | Tampilan Jadwal Praktik Mingguan | Semua aktor | Menampilkan informasi jadwal dokter secara terstruktur. | `JadwalPraktik` |
+| F-10 | Filter Jadwal | Admin, Manajemen, Dokter, Unit Farmasi, Pasien | Menyaring jadwal berdasarkan hari, spesialisasi, gedung, atau dokter. | `JadwalPraktik` |
+| F-11 | Cetak / Ekspor Jadwal | Admin | Menyediakan keluaran jadwal mingguan untuk dokumentasi. | `JadwalPraktik` |
 
+Catatan: fitur login, dashboard, filter, dan ekspor perlu disesuaikan dengan implementasi program yang dikembangkan.
 
 ## 2. Detail Fitur
 
 ### F-01 Pilih Peran / Login
-- Pengguna memilih peran:
-  - Admin / Staf Pendukung
-  - Kepala Poli
-  - Pasien
-  - Unit Farmasi
-- Hak akses menyesuaikan peran.
+
+Pengguna memilih peran atau melakukan login untuk mengakses sistem sesuai dengan hak aksesnya. Aktor dalam sistem meliputi Admin, Manajemen, Dokter, Unit Farmasi, dan Pasien.
 
 ### F-02 Dashboard Admin
-- Menampilkan:
-  - Total dokter
-  - Jumlah jadwal minggu ini
-  - Kamar terisi
-  - Kamar tersedia
-- Navigasi ke seluruh modul.
 
-### F-03 CRUD Data Dokter
-- Field:
-  - `idPersonil`
-  - `nama`
-  - `jenisKelamin`
-  - `spesialisasi`
-  - `statusKehadiran`
-- Spesialisasi: Jantung, Gigi, Mata, Kulit, Paru-Paru, Bedah.
-- Status: Hadir, Izin, Sakit, Tugas Luar.
-- Operasi: Create, Read, Update, Delete.
+Dashboard dirancang untuk menampilkan ringkasan informasi pengelolaan data dokter, jadwal praktik, dan kondisi kamar. Informasi yang ditampilkan disesuaikan dengan data yang tersedia dalam sistem.
 
-### F-04 CRUD Data Kepala Poli
-- Field:
-  - `idKepalaPoli`
-  - `namaKepalaPoli`
-  - `bidangSpesialis`
-- Digunakan untuk integrasi jadwal.
+### F-03 Pengelolaan Data Dokter
 
-### F-05 CRUD Data Unit Farmasi
-- Field:
-  - `idFarmasi`
-  - `namaUnitFarmasi`
-- Digunakan untuk integrasi jadwal.
+Admin mengelola data dokter yang meliputi ID personil, nama, jenis kelamin, spesialisasi, dan status kehadiran.
 
-### F-06 CRUD Poliklinik & Kamar
-- Data:
-  - Poliklinik Gedung A: Kamar 1, 2, 3
-  - Poliklinik Gedung B: Kamar 4, 5, 6
-- Status kamar:
-  - Terisi / Dipakai
-  - Kosong / Tersedia
+Spesialisasi yang digunakan meliputi Jantung, Gigi, Mata, Kulit, Paru-paru, dan Bedah. Status kehadiran meliputi Hadir, Izin, Sakit, dan Tugas Luar.
 
-### F-07 Buat Jadwal Praktik
-- Field:
-  - `idJadwal`
-  - `hari`
-  - `jamPraktik`
-  - `dokter`
-  - `kamar`
-  - `kepalaPoli`
-  - `farmasi`
-- Jadwal disimpan jika tidak bentrok.
+### F-04 Pengelolaan Unit Farmasi
 
-### F-08 Validasi Bentrok Jadwal
-- Method: `cekBentrok(jadwalLain)`
-- Aturan:
-  - Tidak boleh ada dua dokter berbeda pada kamar dan waktu yang sama.
-- Jika bentrok: jadwal ditolak.
+Admin mengelola ID Farmasi dan nama unit Farmasi yang berkaitan dengan jadwal praktik dokter.
 
-### F-09 Update Status Kamar Otomatis
-- Jika dokter `Hadir` → kamar `Terisi / Dipakai Praktik`.
-- Jika dokter `Izin`, `Sakit`, atau `Tugas Luar` → kamar `Kosong / Tersedia`.
+### F-05 Pengelolaan Poliklinik dan Kamar
 
-### F-10 Jadwal Praktik Dokter Mingguan
-- Output utama:
-  - Nama Dokter
-  - Jenis Kelamin
-  - Spesialisasi
-  - Kepala Poli Spesialis
-  - Hari & Jam Praktik
-  - Ruangan Poli & Kamar Praktik
-  - Unit Farmasi Terkait
+Sistem mengelola dua lokasi poliklinik, yaitu Poliklinik Gedung A dengan Kamar 1–3 dan Poliklinik Gedung B dengan Kamar 4–6. Setiap kamar memiliki nomor dan status penggunaan.
 
-### F-11 Filter Jadwal
-- Filter:
-  - Hari
-  - Spesialisasi
-  - Gedung
-  - Dokter
+### F-06 Pembuatan Jadwal Praktik
 
-### F-12 Hak Akses Pengguna
-- Admin: CRUD semua data.
-- Kepala Poli: melihat jadwal bidangnya.
-- Pasien: melihat jadwal mingguan.
-- Unit Farmasi: melihat jadwal terkait farmasi.
+Admin atau Manajemen menentukan dokter, hari, jam praktik, kamar, dan unit Farmasi terkait. Jadwal diperiksa sebelum disimpan.
 
-### F-13 Cetak / Export Jadwal
-- Cetak jadwal mingguan.
-- Export sederhana (txt / csv / pdf jika dikembangkan).
+### F-07 Validasi Bentrok Jadwal
 
+Sistem memeriksa kemungkinan penggunaan kamar pada hari dan interval waktu yang sama. Jika terjadi bentrok, jadwal harus diperbaiki sebelum disimpan.
 
+### F-08 Pembaruan Status Kamar
 
-## 3. Alur Proses Utama
+Sistem menyesuaikan status kamar berdasarkan status kehadiran dokter sesuai dengan aturan yang ditetapkan dalam implementasi aplikasi.
 
-- Admin input dokter
-  - data masuk ke DokterSpesialis
-  - status kehadiran disimpan
-   
-- Admin buat jadwal
-  - pilih dokter, hari, jam, kamar
-  -  sistem panggil cekBentrok()
-  -  jika bentrok = tolak
-  -  jika tidak bentrok = simpan
-  -  updateOtomatisStatusKamar()
-       - Hadir : Terisi
-       - Izin/Sakit/Tugas Luar : Kosong
+### F-09 Tampilan Jadwal Praktik Mingguan
 
-- Pasien / Kepala Poli / Farmasi
-  - buka Jadwal Mingguan
-  - filter
-  - lihat informasi lengkap
+Sistem menampilkan nama dokter, jenis kelamin, spesialisasi, hari dan jam praktik, lokasi poliklinik, nomor kamar, serta unit Farmasi terkait.
+
+### F-10 Filter Jadwal
+
+Pengguna dapat menyaring jadwal berdasarkan hari, spesialisasi, gedung, atau dokter agar informasi lebih mudah ditemukan.
+
+### F-11 Cetak / Ekspor Jadwal
+
+Admin dapat menggunakan fitur ini untuk memperoleh salinan jadwal mingguan sebagai dokumentasi apabila fitur tersebut telah diimplementasikan.
+
+## 4. Alur Proses Utama
+
+1. Admin mengelola data dokter, unit Farmasi, poliklinik, dan kamar praktik.
+2. Admin atau Manajemen menyusun jadwal praktik dokter.
+3. Sistem melakukan validasi bentrok jadwal.
+4. Jika terjadi bentrok, jadwal diperbaiki.
+5. Jika tidak terjadi bentrok, jadwal disimpan.
+6. Sistem memperbarui status kamar sesuai aturan yang berlaku.
+7. Pengguna melihat jadwal praktik mingguan dan dapat menggunakan filter.
+8. Admin dapat mencetak atau mengekspor jadwal apabila fitur tersedia.
