@@ -1,12 +1,12 @@
 # Penjelasan Mockup Aplikasi Pengelolaan Jadwal Dokter
 
-## 1. Deskripsi Mockup
+## A. Deskripsi Mockup
 
 Mockup Aplikasi Pengelolaan Jadwal Dokter RSUD Zainal Abidin Pagar Alam merupakan rancangan tampilan yang menggambarkan penyajian informasi jadwal praktik dokter mingguan.
 
 Tampilan dirancang menggunakan kombinasi warna biru dan hijau toska dengan susunan tabel yang terstruktur agar informasi mudah dibaca. Bagian atas menampilkan nama rumah sakit, sedangkan bagian utama berisi tabel jadwal praktik dokter.
 
-## 2. Komponen Mockup
+## B. Komponen Mockup
 
 ### 2.1 Identitas Rumah Sakit
 
@@ -36,18 +36,8 @@ Kolom status kamar menunjukkan kondisi penggunaan kamar praktik. Informasi ini m
 
 Kolom unit Farmasi menampilkan informasi unit Farmasi yang berkaitan dengan jadwal praktik dokter.
 
-## 3. Fungsi Mockup
+## C. Fungsi Mockup
 
 Mockup berfungsi sebagai acuan visual dalam merancang tampilan informasi jadwal praktik dokter mingguan. Melalui tabel tersebut, pengguna dapat melihat informasi dokter, spesialisasi, waktu praktik, lokasi kamar, dan unit Farmasi secara terstruktur.
 
 Rancangan ini mendukung kebutuhan sistem untuk menyediakan informasi jadwal yang mudah dibaca dan membantu mengurangi kesulitan dalam memperoleh informasi jadwal praktik dokter.
-
-## 4. Kesesuaian dengan Rancangan Sistem
-
-Komponen yang ditampilkan pada mockup disesuaikan dengan kebutuhan sistem pada Tahap 1–6. Informasi mengenai dokter, spesialisasi, kamar praktik, dan unit Farmasi mengacu pada objek dan class yang telah dirancang.
-
-Mockup ini merupakan rancangan antarmuka. Tampilan visual tersebut tidak dengan sendirinya menunjukkan bahwa seluruh fitur telah diimplementasikan dalam program Java.
-
-## 5. Kesimpulan
-
-Mockup Aplikasi Pengelolaan Jadwal Dokter dirancang untuk memberikan gambaran mengenai penyajian jadwal praktik dokter mingguan. Dengan susunan informasi yang terstruktur, rancangan ini diharapkan dapat memudahkan pengguna dalam memperoleh informasi jadwal praktik dan lokasi kamar dokter.
